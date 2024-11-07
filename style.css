@@ -1,128 +1,181 @@
+/* Definição do estilo geral para o corpo da página */
 body {
-    color: #ffffff; /* Texto em branco */
-    background: #121212; /* Fundo preto */
-    margin: 0;
+    color: #f0f0f0; /* Texto em cinza claro */
+    background: #1a1a1a; /* Fundo cinza escuro */
+    margin: 0px;
     font-family: "Chakra Petch", sans-serif;
     margin-bottom: 100px;
+    animation: fadeIn 2s ease-in-out; /* Animação para o carregamento suave */
 }
 
-/* Navegação */
-nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #e63946;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #f1faee;
-}
-
+/* Estilo para o cabeçalho */
 header {
-    background-color: #1d1d1d;
-    padding: 10px 20px;
+    border-bottom: solid 2px #ffcc00; /* Borda inferior em amarelo */
+    padding: 20px;
     font-size: 32px;
-    color: #e63946;
+    color: #ffcc00; /* Texto em amarelo */
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    animation: slideDown 1s ease-out; /* Animação de deslizamento do cabeçalho */
 }
 
+/* Efeito de desvanecimento para a página */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animação para o cabeçalho descer suavemente */
+@keyframes slideDown {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Estilo para a seção chamada */
 .chamada {
-    background: linear-gradient(135deg, #1d3557, #457b9d);
-    padding: 120px 0; /* Ajuste para o header fixo */
+    background: #4a90e2; /* Fundo azul */
+    padding: 80px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    color: #f1faee;
-    animation: fadeInUp 1s ease-in-out;
+    position: relative;
+    animation: zoomIn 2s ease-in-out; /* Animação de zoom suave */
 }
 
+/* Animação de zoom para a seção chamada */
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Estilo para o texto da chamada */
+.chamada-texto {
+    margin-right: 5%;
+    text-align: center;
+}
+
+/* Título da chamada */
+h1 {
+    font-size: 40px;
+    color: #ffffff; /* Título em branco */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Sombra no texto */
+}
+
+/* Estilo para o parágrafo da chamada */
+p {
+    font-size: 20px;
+    color: #e0e0e0; /* Parágrafo em cinza claro */
+    margin-top: 10px;
+}
+
+/* Estilo para a seção de vídeos */
 .categoria {
-    padding: 20px;
+    padding: 50px 20px;
     margin-top: 50px;
-    background: #1d1d1d;
-    border-top: 2px solid #e63946;
-    border-bottom: 2px solid #e63946;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    animation: fadeIn 1.5s ease-in-out;
+    animation: fadeInUp 2s ease-out; /* Animação para a seção de vídeos aparecer */
 }
 
+/* Animação para a seção de vídeos aparecer de baixo para cima */
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Título da categoria */
 .categoria h2 {
-    color: #e63946;
-    font-size: 28px;
+    color: #ffcc00; /* Títulos em amarelo */
     text-align: center;
-    margin-bottom: 20px;
-    animation: fadeInDown 1s ease-in-out;
+    margin-bottom: 30px;
 }
 
+/* Estilo para os vídeos */
 .categoria-videos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    padding: 20px;
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    justify-content: center;
+    animation: slideIn 1s ease-out; /* Animação de entrada para os vídeos */
+}
+
+/* Animação para os vídeos entrarem deslizantes */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Estilo para cada imagem de vídeo */
+.categoria-videos a {
+    position: relative;
+    display: inline-block;
 }
 
 .categoria-videos img {
-    opacity: 0.85;
-    height: 180px;
-    border-radius: 10px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.8; /* Opacidade padrão */
+    height: 200px;
+    border-radius: 10px; /* Bordas arredondadas */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transição suave ao passar o mouse */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Sombra suave */
 }
 
+/* Efeito de zoom e borda ao passar o mouse */
 .categoria-videos img:hover {
     opacity: 1;
-    transform: scale(1.05);
-    border: 3px solid #e63946;
+    transform: scale(1.1);
+    border: 3px solid #ff5733; /* Borda laranja ao passar o mouse */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5); /* Sombra mais intensa */
 }
 
-footer {
-    background-color: #1d1d1d;
-    color: #a8dadc;
-    padding: 20px;
-    text-align: center;
-    font-size: 14px;
-    border-top: 2px solid #e63946;
-    margin-top: 50px;
+/* Estilo para o link de vídeo */
+.categoria-videos a:focus {
+    outline: none;
 }
 
-footer a {
-    color: #e63946;
-    text-decoration: none;
-    transition: color 0.3s ease;
+/* Adicionando um efeito de transição suave para o link de vídeo */
+.categoria-videos a:hover img {
+    transform: scale(1.1); /* Zoom suave */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Sombra mais intensa */
 }
 
-footer a:hover {
-    color: #f1faee;
+/* Adicionando um efeito de brilho ao título de cada vídeo */
+.categoria-videos img:active {
+    animation: glow 0.3s ease-out forwards; /* Efeito de brilho */
 }
 
-/* Animações */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Animação de brilho para as imagens */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px #ff5733;
+    }
+    100% {
+        box-shadow: 0 0 20px #ff5733, 0 0 30px #ff5733;
+    }
 }
