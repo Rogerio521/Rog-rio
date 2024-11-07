@@ -1,12 +1,128 @@
 body {
-    background: black;
-    color: orange;
-    margin: 0px;
+    color: #ffffff; /* Texto em branco */
+    background: #121212; /* Fundo preto */
+    margin: 0;
+    font-family: "Chakra Petch", sans-serif;
+    margin-bottom: 100px;
+}
+
+/* Navegação */
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #e63946;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f1faee;
 }
 
 header {
-    border-bottom: solid 2px rgb(42, 122, 228);
-    margin 20px;
+    background-color: #1d1d1d;
+    padding: 10px 20px;
     font-size: 32px;
-    color: rgb(42, 122, 228);
+    color: #e63946;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.chamada {
+    background: linear-gradient(135deg, #1d3557, #457b9d);
+    padding: 120px 0; /* Ajuste para o header fixo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #f1faee;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.categoria {
+    padding: 20px;
+    margin-top: 50px;
+    background: #1d1d1d;
+    border-top: 2px solid #e63946;
+    border-bottom: 2px solid #e63946;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.categoria h2 {
+    color: #e63946;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.categoria-videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.categoria-videos img {
+    opacity: 0.85;
+    height: 180px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.categoria-videos img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+    border: 3px solid #e63946;
+}
+
+footer {
+    background-color: #1d1d1d;
+    color: #a8dadc;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    border-top: 2px solid #e63946;
+    margin-top: 50px;
+}
+
+footer a {
+    color: #e63946;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #f1faee;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
